@@ -1,0 +1,12 @@
+{
+  "name": "wndltz-authentication",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/actano/wndltz-authentication.git"
+  },
+  "author": "Actano GmbH",
+  "license": "ISC"
+}
