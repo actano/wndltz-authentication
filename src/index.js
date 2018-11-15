@@ -1,5 +1,10 @@
 import express from 'express'
 import bodyParser from 'body-parser'
+import validator from 'swagger-express-validator'
+import swaggerUi from 'swagger-ui-express'
+import util from 'util'
+
+import schema from './swagger'
 import createToken from './create-token'
 import validateToken from './validate-token'
 import { JWT_PUBLIC_KEY } from './keys'
@@ -7,6 +12,13 @@ import { JWT_PUBLIC_KEY } from './keys'
 const app = express()
 
 app.use(bodyParser.json())
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(schema))
+app.use(validator({
+  schema,
+  validateRequest: true,
+  validateResponse: true,
+}))
 
 app.post('/login', (req, res) => {
   const { username, password } = req.body

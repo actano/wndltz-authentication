@@ -22,6 +22,8 @@
     "@rplan/config": "^1.2.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
-    "jsonwebtoken": "^8.3.0"
+    "jsonwebtoken": "^8.3.0",
+    "swagger-express-validator": "^0.1.1",
+    "swagger-ui-express": "^4.0.1"
   }
 }
