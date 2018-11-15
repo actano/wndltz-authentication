@@ -1,64 +1,41 @@
 {
-  "openapi": "3.0.1",
+  "swagger": "2.0",
   "info": {
     "title": "wndltz/authentication-service",
     "description": "",
     "version": "0.1"
   },
-  "servers": [
-    {
-      "url": "http://localhost:8081"
-    },
-    {
-      "url": "http://rplan.com"
-    }
-  ],
   "paths": {
     "/login": {
       "post": {
         "description": "login, request an auth token",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "username": {
-                    "type": "string"
-                  },
-                  "password": {
-                    "type": "string"
-                  }
-                }
-              },
-              "examples": {
-                "simple": {
-                  "value": "{\"username\": \"user\", \"password\": \"pass\"}"
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "login",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {
+                  "type": "string"
                 },
-                "simple2": {
-                  "value": "{\"username\": \"user\", \"password\": \"pass\"}"
+                "password": {
+                  "type": "string"
                 }
               }
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "generated token",
-            "content": {
-              "application/json; charset=utf-8": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "token": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "examples": {
-                  "sample_token": {
-                    "value": "{\"token\": \"some-token-value\"}"
-                  }
+            "schema": {
+              "type": "object",
+              "properties": {
+                "token": {
+                  "type": "string"
                 }
               }
             }
