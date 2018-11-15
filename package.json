@@ -10,7 +10,7 @@
   "author": "Actano GmbH",
   "license": "ISC",
   "scripts": {
-    "start": "babel-node src/index.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "@babel/cli": "^7.1.5",
