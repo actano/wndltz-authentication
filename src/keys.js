@@ -1,5 +1,5 @@
-import fs from 'fs'
+import config from '@rplan/config'
 
-export const JWT_PRIVATE_KEY = fs.readFileSync('auth')
+export const JWT_PRIVATE_KEY = config.get('authentication:private-key')
 
-export const JWT_PUBLIC_KEY = fs.readFileSync('auth.pub')
+export const JWT_PUBLIC_KEY = config.get('authentication:public-key')
