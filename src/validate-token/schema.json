@@ -1,0 +1,38 @@
+{
+  "post": {
+    "description": "check if the given token is valid",
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "parameters": [
+      {
+        "in": "body",
+        "name": "validate",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "token": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "validation response",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "isValid": {
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "post": {
+    "description": "login, request an auth token",
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "parameters": [
+      {
+        "in": "body",
+        "name": "login",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "username": {
+              "type": "string"
+            },
+            "password": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    ],
+    "responses": {
+      "200": {
+        "description": "generated token",
+        "schema": {
+          "type": "object",
+          "properties": {
+            "token": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

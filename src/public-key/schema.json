@@ -1,0 +1,16 @@
+{
+  "get": {
+    "description": "get the public key",
+    "produces": [
+      "text/plain"
+    ],
+    "responses": {
+      "200": {
+        "description": "generated token",
+        "schema": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
